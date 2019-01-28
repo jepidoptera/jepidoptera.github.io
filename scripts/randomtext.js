@@ -1,6 +1,12 @@
-var movebox = document.getElementById("absolute-box");
-var boxClicked = false;
-var initClickPos = [0, 0];
+
+/*jshint esversion: 6 */
+
+function fillTaggedElements(){
+    elements = document.querySelectorAll('.randomtext');
+    elements.forEach(element => {
+        element.textContent = getRandomText(parseInt(element.textContent));            
+    });
+}
 
 function getRandomText(nofWords){
     var wordOptions = ["condor", "walamby", "mofro", "condoritite", "miliball", 
