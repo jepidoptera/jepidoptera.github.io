@@ -10,7 +10,7 @@ function onClickSubmit(){
         // show warning panel - not all boxes are filled in
         document.getElementById("warningPanel").style.display = "block";
     }
-};
+}
 
 function onClickOkThanks(){
     document.getElementById("thanksPanel").style.display = "none";

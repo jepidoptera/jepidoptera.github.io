@@ -1,6 +1,13 @@
 
 /*jshint esversion: 6 */
 
+function clickGenerate(){
+    var textField = document.getElementById("textField");
+    
+    // generate paragraph markers as html
+    textField.innerHTML = getRandomText(Math.random() * 40 + 32) + "<BR><BR>" + textField.innerHTML;
+}
+
 function fillTaggedElements(){
     elements = document.querySelectorAll('.randomtext');
     elements.forEach(element => {
@@ -11,7 +18,7 @@ function fillTaggedElements(){
 function getRandomText(nofWords){
     var wordOptions = ["condor", "walamby", "mofro", "condoritite", "miliball", 
     "frofram", "corocoro", "morzom", "baracko", "scambaric", "ultram", "orzo", 
-    "umpilion", "yomizi", "quimbiton", "ethrofamion", "gracidice", "et", "ito", 
+    "umpilion", "yomizi", "quimbiton", "ethrofamion", "gracidide", "et", "ito", 
     "amba", "ifram", "ulu", "weth", "wimby", "coco", "mint", "zumi", "quid", 
     "xocorundi", "umbo", "tilitoli", "hocka", "ichigo", "nim", "nam", "omborit",
     "wo", "timbault", "ravenist", "paucomfit", "azinis", "som", "diot", "cro",
