@@ -24,7 +24,7 @@ function loadIframe(){
     console.log("finished");
 }
 
-window.addEventListener("message", iframeScroll(), false);
+window.addEventListener("message", iframeScroll(event), false);
 
 function iframeScroll (event){
     console.log(event.data + ", " + event.origin);
