@@ -9,23 +9,37 @@ function clickPortfolio() {
     window.open("portfolio.html", "iframePanel");
 }
 
+var iframeHeight = 0;
+var iframeTop = 0;
 // var iframe;
 function loadIframe(){
-    console.log ("loading");
-    // console.log (iframe.contentDocument.data);
-
-    console.log("continuing");
-    // console.log (iframe.contentWindow.origin);
-    document.getElementById('iframePanel').contentWindow.postMessage("hi", "*"); 
-
-    // iframe.contentWindow.addEventListener('scroll', function(event) {
-    //     console.log(event);
-    // }, false);      
-    console.log("finished");
+    // NOTE: this took me a long time to figure out 
+    // send a message to the iframe so it can get a handle to the parent window
+    var iframe = document.getElementById('iframePanel');
+    iframe.contentWindow.postMessage("hi", "*");
+    // get the default height and position for the iframe
+    iframeHeight = iframe.style.height;
+    iframeTop = iframe.style.top;
 }
 
 window.addEventListener("message", function(event){
-    console.log(event.data + ", " + event.origin);
+    // console.log(event.data + ", " + event.origin);
+    // iframe will post its scroll y offset as a message, 
+    // and if screen width < 640, we'll have the header scroll up 
+    // by that amount, and the iframe expands to fill the space
+    var header = document.getElementById("headerSection");
+    var iframe = document.getElementById('iframePanel');
+    if (screen.width <= 640) {
+        // phone screen
+        // move header out of the way
+        header.style.top = toString(-event.data) + "px";
+        iframe.style.height = Math.max(
+            iframeHeight + parseInt(event.data), iframeHeight + header.style.height
+        );
+        iframe.style.top = Math.min(
+            iframeTop - parseInt(event.data), 0
+        );
+    }
 }, 
 false);
 
