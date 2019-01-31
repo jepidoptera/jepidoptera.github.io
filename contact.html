@@ -6,7 +6,7 @@
         <title>Page Title</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
     
-        <link rel="stylesheet" type="text/css" media="screen" href="css/pages.css"/>
+        <link rel="stylesheet" type="text/css" media="screen" href="css/contact.css"/>
         <link rel="stylesheet" type="text/css" media="screen" href="css/style.css"/>
     
         <script type="text/javascript" src="scripts/contact.js"></script>
@@ -28,17 +28,19 @@
             </form>    
             <button id="submitButton" onclick="onClickSubmit()">Submit</button>
         </section>
-        <section id="thanksPanel">
-            <p>
-                Thank you for your message.  I'll get back to you as soon as possible.
-            </p>
-            <button id="okThanksButton" onclick="onClickOkThanks()">OK</button>
-        </section>
-        <section id="warningPanel">
-            <p>
-                Please fill in all fields to submit a message.
-            </p>
-            <button id="okFineButton" onclick="onClickOkFine()">OK</button>
+        <section id=dialogPanels>
+            <section id="thanksPanel">
+                <p>
+                    Thank you for your message.  I'll get back to you as soon as possible.  (Like, after I learn to connect this to an email server)
+                </p>
+                <button id="okThanksButton" onclick="onClickOkThanks()">OK</button>
+            </section>
+            <section id="warningPanel">
+                <p>
+                    Please fill in all fields to submit a message.
+                </p>
+                <button id="okFineButton" onclick="onClickOkFine()">OK</button>
+            </section>
         </section>
     </body>
 </html>

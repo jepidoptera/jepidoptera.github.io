@@ -34,6 +34,9 @@ function getRandomText(nofWords){
     }
     // build a paragraph
     var returnval = "";
+    var sentenceLength = 0;
+    var minSentence = 5;
+    var maxSentence = 25;
     for (i = 0; i < nofWords; i++){
         var random = Math.random() * totalWordLength;
         var relativeWordLengthsoFar = 0;
@@ -42,10 +45,28 @@ function getRandomText(nofWords){
             relativeWordLengthsoFar += relativeWordLengths[j];
             if (relativeWordLengthsoFar > random){
                 // get a random number between 0 and the total number of letters in all words
-                returnval += wordOptions[j] + " ";
+                if (sentenceLength == 0){
+                    returnval += capitalizeFirstLetter(wordOptions[j]);
+                }
+                else {
+                    returnval += wordOptions[j];
+                }
+                sentenceLength += 1;
+                if (sentenceLength - minSentence > Math.random() * (maxSentence - minSentence)){
+                    returnval += ".  ";
+                    sentenceLength = 0;
+                }
+                else{
+                    returnval += " ";
+                }
                 break;
             }
         }
     }
+    if (sentenceLength > 0) returnval = returnval.slice(0, returnval.length - 1) + ".";
     return returnval;
+}
+
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
 }

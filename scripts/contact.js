@@ -1,22 +1,26 @@
 function onClickSubmit(){
+    // show dialog layer - blocks user from clicking anything but the box
+    document.getElementById("dialogPanels").style.display = "block";
     if (document.getElementById("nameInput").value != "" &&
     document.getElementById("emailInput").value != "" &&
     // todo: require it to be a valid email address
     document.getElementById("messageInput").value != ""){
         // show okthanks panel
-        document.getElementById("thanksPanel").style.display = "block";
+        document.getElementById("thanksPanel").style.display = "inline-block";
     }
     else{
         // show warning panel - not all boxes are filled in
-        document.getElementById("warningPanel").style.display = "block";
+        document.getElementById("warningPanel").style.display = "inline-block";
     }
 }
 
 function onClickOkThanks(){
+    document.getElementById("dialogPanels").style.display = "none";
     document.getElementById("thanksPanel").style.display = "none";
     window.location.href = "about.html";
 }
 
 function onClickOkFine(){
+    document.getElementById("dialogPanels").style.display = "none";
     document.getElementById("warningPanel").style.display = "none";
 }

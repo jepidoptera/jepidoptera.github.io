@@ -1,0 +1,52 @@
+/* portfolio elements */
+body {
+    text-align: center;
+}
+
+#portfolioContainer {
+    display: inline-block;
+    width: 960px;
+}
+
+.portfolioImage {
+    background-color: whitesmoke;
+    position: relative;
+    margin: 20px;
+    width: 280px;
+    height: 160px;
+    float: left;
+    display: flex;
+    flex-direction: column;
+}
+
+.portfolioButton {
+    position: absolute;
+    top: 100px;
+    width: 280px;
+    height: 50px;
+    background-color: cadetblue;
+    color: white;
+    font-size: 12pt;
+    margin: 0 auto;
+}
+
+#randomTextFrame {
+    padding: 5px 20px;
+    font-size: 9pt;
+    text-align: left;
+}
+
+/* alterations for smaller screens */
+/* has to be 958 or you only get two columns at full width */
+@media screen and (max-width: 958px) {
+    #portfolioContainer {
+        width: 640px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    #portfolioContainer {
+        width: 320px;
+    }
+}
+
