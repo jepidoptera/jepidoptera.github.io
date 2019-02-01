@@ -11,12 +11,14 @@ function clickPortfolio() {
 
 var iframeHeight = 0;
 var iframeTop = 0;
+var iframe;
 // var iframe;
 function loadIframe(){
     // // send a message to the iframe so it can get a handle to the parent window
     // var iframe = document.getElementById('iframePanel');
     // iframe.contentWindow.postMessage("hi", "*");
     // get the default height and position for the iframe
+    iframe =  document.getElementById("iframePanel");
     iframeHeight = iframe.style.height;
     iframeTop = iframe.style.top;
 
