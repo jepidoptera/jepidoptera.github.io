@@ -37,6 +37,10 @@ hr {
 #headerSection {
     height: 80px;
     background-color: white;
+    position: relative;
+    top: 0px;
+    left: 0;
+    width: 100%;
     /* flex: 0 1 auto; */
     /* border: 2px solid black; */
 }
@@ -101,6 +105,8 @@ hr {
     background-color: white;
     display: block;
     margin: 20px auto;
+    position: relative;
+    top: 0px;
 }
 
 #footer {

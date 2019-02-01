@@ -13,10 +13,9 @@ var iframeHeight = 0;
 var iframeTop = 0;
 // var iframe;
 function loadIframe(){
-    // NOTE: this took me a long time to figure out 
-    // send a message to the iframe so it can get a handle to the parent window
-    var iframe = document.getElementById('iframePanel');
-    iframe.contentWindow.postMessage("hi", "*");
+    // // send a message to the iframe so it can get a handle to the parent window
+    // var iframe = document.getElementById('iframePanel');
+    // iframe.contentWindow.postMessage("hi", "*");
     // get the default height and position for the iframe
     iframeHeight = iframe.style.height;
     iframeTop = iframe.style.top;
@@ -29,7 +28,7 @@ function loadIframe(){
             var header = document.getElementById("headerSection");
             var iframe = document.getElementById('iframePanel');
             var scrollHeight = parseInt(iframe.contentWindow.pageYOffset);
-            header.style.top = toString(-scrollHeight) + "px";
+            header.style.top = parseInt(header.style.top) - toString(-scrollHeight) + "px";
             iframe.style.height = Math.max(
                 iframeHeight + parseInt(event.data), iframeHeight + header.style.height
             ) + "px";
