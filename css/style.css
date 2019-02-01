@@ -37,6 +37,8 @@ hr {
 #headerSection {
     height: 80px;
     background-color: white;
+    position: absolute;
+    top: 0px;
     /* flex: 0 1 auto; */
     /* border: 2px solid black; */
 }

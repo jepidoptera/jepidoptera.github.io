@@ -27,6 +27,7 @@ window.addEventListener("message", function(event){
     // iframe will post its scroll y offset as a message, 
     // and if screen width < 640, we'll have the header scroll up 
     // by that amount, and the iframe expands to fill the space
+    if (typeof(data) != "number") return;
     var header = document.getElementById("headerSection");
     var iframe = document.getElementById('iframePanel');
     if (screen.width <= 640) {
@@ -35,11 +36,27 @@ window.addEventListener("message", function(event){
         header.style.top = toString(-event.data) + "px";
         iframe.style.height = Math.max(
             iframeHeight + parseInt(event.data), iframeHeight + header.style.height
-        );
+        ) + "px";
         iframe.style.top = Math.min(
             iframeTop - parseInt(event.data), 0
-        );
+        ) + "px";
     }
 }, 
 false);
 
+// let's try this a different way...
+var iframe = document.getElementById("iframePanel");
+iframe.contentWindow.addEventListener("scroll", function() {
+    if (screen.width <= 640) {
+        // phone screen
+        // move header out of the way
+        var scrollHeight = parseInt(iframe.contentWindow.pageYOffset);
+        header.style.top = toString(-scrollHeight) + "px";
+        iframe.style.height = Math.max(
+            iframeHeight + parseInt(event.data), iframeHeight + header.style.height
+        ) + "px";
+        iframe.style.top = Math.min(
+            iframeTop - parseInt(event.data), 0
+        ) + "px";
+    }
+});
