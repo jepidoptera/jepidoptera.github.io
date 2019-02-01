@@ -26,6 +26,8 @@ function loadIframe(){
         if (screen.width <= 640) {
             // phone screen
             // move header out of the way
+            var header = document.getElementById("headerSection");
+            var iframe = document.getElementById('iframePanel');
             var scrollHeight = parseInt(iframe.contentWindow.pageYOffset);
             header.style.top = toString(-scrollHeight) + "px";
             iframe.style.height = Math.max(
@@ -36,7 +38,6 @@ function loadIframe(){
             ) + "px";
         }
     });
-
 }
 
 // window.addEventListener("message", function(event){
