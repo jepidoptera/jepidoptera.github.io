@@ -16,6 +16,7 @@ function loadIframe(){
     if (screen.width < 640){
         iframe =  document.getElementById("iframePanel");
         iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
+        iframe.style.overflow = "hidden";
     }
 
     // // // send a message to the iframe so it can get a handle to the parent window
