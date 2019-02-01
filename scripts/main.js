@@ -8,13 +8,16 @@ function clickAbout() {
 function clickPortfolio() {
     window.open("portfolio.html", "iframePanel");
 }
-
 var iframeHeight = 0;
 var iframeTop = 0;
 var iframe;
 // var iframe;
 function loadIframe(){
-    // // send a message to the iframe so it can get a handle to the parent window
+    document.getElementById("headerSection").addEventListener("click", function() {
+        document.getElementById("headerSection").style.top = "10px";
+    });
+    
+        // // send a message to the iframe so it can get a handle to the parent window
     // var iframe = document.getElementById('iframePanel');
     // iframe.contentWindow.postMessage("hi", "*");
     // get the default height and position for the iframe
@@ -31,12 +34,12 @@ function loadIframe(){
             var iframe = document.getElementById('iframePanel');
             var scrollHeight = parseInt(iframe.contentWindow.pageYOffset);
             if (scrollHeight == 0) {
-                header.style.top = "0px";
+                document.getElementById("headerSection").style.top = "0px";
                 return;
             }
             var headerMin = -parseInt(header.style.height);
             var headerTop = Math.max(parseInt(header.style.top) - toString(-scrollHeight), headerMin);
-            header.style.top = headerTop + "px";
+            document.getElementById("headerSection").style.top = headerTop + "px";
             if (headerTop > headerMin) {
                 iframe.contentWindow.pageYOffset = 0;
             }
