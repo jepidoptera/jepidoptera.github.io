@@ -28,7 +28,16 @@ function loadIframe(){
             var header = document.getElementById("headerSection");
             var iframe = document.getElementById('iframePanel');
             var scrollHeight = parseInt(iframe.contentWindow.pageYOffset);
-            header.style.top = parseInt(header.style.top) - toString(-scrollHeight) + "px";
+            if (scrollHeight == 0) {
+                header.style.top = "0px";
+                return;
+            }
+            var headerMin = -parseInt(header.style.height);
+            var headerTop = Math.max(parseInt(header.style.top) - toString(-scrollHeight), headerMin);
+            header.style.top = headerTop + "px";
+            if (headerTop > headerMin) {
+                iframe.contentWindow.pageYOffset = 0;
+            }
             iframe.style.height = Math.max(
                 iframeHeight + parseInt(event.data), iframeHeight + header.style.height
             ) + "px";
