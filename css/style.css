@@ -107,6 +107,7 @@ hr {
     margin: 20px auto;
     position: relative;
     top: 0px;
+    overflow: hidden;
 }
 
 #footer {
