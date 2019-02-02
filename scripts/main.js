@@ -22,7 +22,11 @@ function loadIframe(){
         iframe.style.height = (iframe.contentWindow.document.body.scrollHeight + 40) + 'px';
         iframe.scrolling = "no";
     }
-
+    else {
+        iframe = document.getElementById("iframePanel");
+        iframe.style.height = "420px";
+        iframe.scrolling = "yes";
+    }
     // // // send a message to the iframe so it can get a handle to the parent window
     // // var iframe = document.getElementById('iframePanel');
     // // iframe.contentWindow.postMessage("hi", "*");
