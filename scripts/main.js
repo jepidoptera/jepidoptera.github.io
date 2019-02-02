@@ -17,9 +17,9 @@ var iframeTop = 0;
 var iframe;
 // var iframe;
 function loadIframe(){
-    if (screen.width < 640){
+    if (window.width < 640){
         iframe = document.getElementById("iframePanel");
-        iframe.style.height = (iframe.contentWindow.document.body.scrollHeight + 40) + 'px';
+        iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
         iframe.scrolling = "no";
     }
     else {
