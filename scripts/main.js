@@ -21,7 +21,7 @@ function clickPortfolio() {
 
 
 // var innerDiv;
-function loadiframe(){
+function loadIframe(){
     var iframe = document.getElementById("iframePanel");
 
     if (window.width < 640 || iframe.src == "contact.html"){
