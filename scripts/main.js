@@ -24,17 +24,9 @@ function clickPortfolio() {
 function loadIframe(){
     var iframe = document.getElementById("iframePanel");
 
-    if (window.width < 640 || iframe.src == "contact.html"){
+    if (window.width < 640 || iframe.contentDocument.URL.slice(-12) == "contact.html"){
         iframe.style.height = iframe.contentWindow.document.body.height + 'px';
         iframe.scrolling = "no";
     }
-    // else {
-    //     iframe.style.height = "420px";
-    //     iframe.scrolling = "yes";
-    // }
-
-    // if (iframe.src == "contact.html") {
-    //     iframe.scrolling = "no";
-    // }
 }
 
