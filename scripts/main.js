@@ -1,92 +1,39 @@
-// open links inside iframe when the buttons are pushed
+// open links inside innerDiv when the buttons are pushed
 function clickContact() {
+    // loadInnerDiv("contact.html");
     window.open("contact.html", "iframePanel");
-    loadIframe();
 }
 function clickAbout() {
     window.open("about.html", "iframePanel");
-    loadIframe();
+    // loadinnerDiv("about.html");
 }
 function clickPortfolio() {
     window.open("portfolio.html", "iframePanel");
-    loadIframe();
+    // loadinnerDiv("portfolio.html");
 }
 
-var iframeHeight = 0;
-var iframeTop = 0;
+// function loadInnerDiv(contentURL) {
+//     // get a reference to the innerDiv
+//     var innerDiv = document.getElementById("innerDiv");
 
-// get a reference to the iframe
+//     innerDiv.innerHTML = '<object type="text/html" data="' + contentURL + '" ></object>';
+// }
+
 var iframe = document.getElementById("iframePanel");
 
-// var iframe;
-function loadIframe(){
-    if (window.width < 640){
-        iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
+// var innerDiv;
+function loadiframe(){
+    if (window.width < 640 || iframe.src == "contact.html"){
+        iframe.style.height = iframe.contentWindow.document.body.height + 'px';
         iframe.scrolling = "no";
     }
-    else {
-        iframe.style.height = "420px";
-        iframe.scrolling = "yes";
-    }
+    // else {
+    //     iframe.style.height = "420px";
+    //     iframe.scrolling = "yes";
+    // }
 
-    if (iframe.contentWindow.src == "contact.html") {
-        iframe.scrolling = "no";
-    }
-    // // // send a message to the iframe so it can get a handle to the parent window
-    // // var iframe = document.getElementById('iframePanel');
-    // // iframe.contentWindow.postMessage("hi", "*");
-    // // get the default height and position for the iframe
-    // iframe =  document.getElementById("iframePanel");
-    // iframeHeight = iframe.style.height;
-    // iframeTop = iframe.style.top;
-
-    // // let's try this a different way...
-    // iframe.contentWindow.addEventListener("scroll", function() {
-    //     if (screen.width <= 640) {
-    //         // phone screen
-    //         // move header out of the way
-    //         var header = document.getElementById("headerSection");
-    //         var iframe = document.getElementById('iframePanel');
-    //         var scrollHeight = parseInt(iframe.contentWindow.pageYOffset);
-    //         if (scrollHeight == 0) {
-    //             document.getElementById("headerSection").style.top = "0px";
-    //             return;
-    //         }
-    //         var headerMin = -parseInt(document.getElementById("headerSection").style.height);
-    //         var headerTop = Math.max(parseInt(document.getElementById("headerSection").style.top) - toString(-scrollHeight), headerMin);
-    //         document.getElementById("headerSection").style.top = headerTop + "px";
-    //         if (headerTop > headerMin) {
-    //             iframe.contentWindow.pageYOffset = 0;
-    //         }
-    //         iframe.style.height = Math.max(
-    //             iframeHeight + parseInt(event.data), iframeHeight + header.style.height
-    //         ) + "px";
-    //         iframe.style.top = Math.min(
-    //             iframeTop - parseInt(event.data), 0
-    //         ) + "px";
-    //     }
-    // });
+    // if (iframe.src == "contact.html") {
+    //     iframe.scrolling = "no";
+    // }
 }
-
-// window.addEventListener("message", function(event){
-//     // console.log(event.data + ", " + event.origin);
-//     // iframe will post its scroll y offset as a message, 
-//     // and if screen width < 640, we'll have the header scroll up 
-//     // by that amount, and the iframe expands to fill the space
-//     if (typeof(data) != "number") return;
-//     var header = document.getElementById("headerSection");
-//     var iframe = document.getElementById('iframePanel');
-//     if (screen.width <= 640) {
-//         // phone screen
-//         // move header out of the way
-//         header.style.top = toString(-event.data) + "px";
-//         iframe.style.height = Math.max(
-//             iframeHeight + parseInt(event.data), iframeHeight + header.style.height
-//         ) + "px";
-//         iframe.style.top = Math.min(
-//             iframeTop - parseInt(event.data), 0
-//         ) + "px";
-//     }
-// }, 
-// false);
 
