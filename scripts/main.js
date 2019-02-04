@@ -1,18 +1,16 @@
 // open links inside iframe when the buttons are pushed
-// function clickContact() {
-//     window.open("contact.html", "iframePanel");
-//     iframe.scrolling = "no";
-// }
-// function clickAbout() {
-//     window.open("about.html", "iframePanel");
-//     loadIframe();
-//     iframe.scrolling = "no";
-// }
-// function clickPortfolio() {
-//     window.open("portfolio.html", "iframePanel");
-//     loadIframe();
-//     iframe.scrolling = "no";
-// }
+function clickContact() {
+    window.open("contact.html", "iframePanel");
+    loadIframe();
+}
+function clickAbout() {
+    window.open("about.html", "iframePanel");
+    loadIframe();
+}
+function clickPortfolio() {
+    window.open("portfolio.html", "iframePanel");
+    loadIframe();
+}
 
 var iframeHeight = 0;
 var iframeTop = 0;
