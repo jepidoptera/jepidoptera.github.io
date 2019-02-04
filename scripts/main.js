@@ -19,10 +19,11 @@ function clickPortfolio() {
 //     innerDiv.innerHTML = '<object type="text/html" data="' + contentURL + '" ></object>';
 // }
 
-var iframe = document.getElementById("iframePanel");
 
 // var innerDiv;
 function loadiframe(){
+    var iframe = document.getElementById("iframePanel");
+
     if (window.width < 640 || iframe.src == "contact.html"){
         iframe.style.height = iframe.contentWindow.document.body.height + 'px';
         iframe.scrolling = "no";
