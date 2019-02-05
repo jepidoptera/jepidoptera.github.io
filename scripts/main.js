@@ -18,6 +18,6 @@ function loadIframe(){
 
     if (window.width < 640){
         iframe.style.height = iframe.contentWindow.document.body.height + 'px';
-        iframe.scrolling = "no";
+        iframe.contentDocument.body.style.overflow = "hidden";
     }
 }
