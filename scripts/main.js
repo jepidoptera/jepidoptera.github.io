@@ -19,8 +19,8 @@ function loadIframe(){
     var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
 
     // cross-platform document height
-    var body = document.body,
-    html = document.documentElement;
+    var body = iframe.contentDocument.body,
+    html = iframe.contentDocument.documentElement;
 
     var height = Math.max( body.scrollHeight, body.offsetHeight, 
         html.clientHeight, html.scrollHeight, html.offsetHeight );
@@ -38,3 +38,4 @@ function loadIframe(){
         iframe.contentDocument.body.style.overflow = "scroll";
     }
 }
+
