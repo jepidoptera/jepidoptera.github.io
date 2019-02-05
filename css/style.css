@@ -36,13 +36,12 @@ hr {
 
 #headerSection {
     height: 80px;
-    background-color: white;
-    position: relative;
-    top: 0px;
+    background-color: rgb(220, 220, 220);
+    position: fixed;
+    top: 0;
     left: 0;
     width: 100%;
-    /* flex: 0 1 auto; */
-    /* border: 2px solid black; */
+    z-index: 2;
 }
 
 #headerContent {
@@ -50,6 +49,7 @@ hr {
     height: 100%;
     margin: 0 auto;
     text-align: center;
+    position: relative;
 }
 
 #nametag {
@@ -96,6 +96,8 @@ hr {
     flex: 1 1 auto;
     width: 100%;
     text-align: center;
+    position: relative;
+    top: 100px;
  }
 
 #iframePanel, #innerDiv{
@@ -125,7 +127,7 @@ hr {
 
 /* alterations for smaller screens */
 @media screen and (max-width: 1080px) {
-    #iframePanel, #headerContent {
+    #iframePanel, #innerDiv, #headerContent {
         width: 87.5%
     }
 }
@@ -160,6 +162,14 @@ hr {
         height: 40%;
         padding: 9px;
         /* margin: 9px; */
+    }
+
+    #headerSection {
+        position: relative;
+    }
+
+    #mainContent {
+        top: 20px;
     }
 }
 

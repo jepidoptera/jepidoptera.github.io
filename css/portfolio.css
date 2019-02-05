@@ -6,18 +6,19 @@ html, body {
 
 #portfolioContainer {
     display: inline-block;
-    width: 960px;
+    width: 100%;
+    text-align: center;
 }
 
 .portfolioImage {
     background-color: whitesmoke;
     position: relative;
-    margin: 20px;
+    margin: 15px;
     width: 280px;
     height: 160px;
-    float: left;
-    display: flex;
-    flex-direction: column;
+    display: inline-block;
+    text-align: left;
+    border: 1px solid black;
 }
 
 .portfolioButton {
@@ -28,18 +29,24 @@ html, body {
     background-color: cadetblue;
     color: white;
     font-size: 12pt;
-    margin: 0 auto;
 }
 
 #randomTextFrame {
     padding: 5px 20px;
     font-size: 9pt;
     text-align: left;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    display: block;
+    position: absolute;
+    background-color: whitesmoke;
+    top: 0;
 }
 
 /* alterations for smaller screens */
 /* has to be 958 or you only get two columns at full width */
-@media screen and (max-width: 958px) {
+/* @media screen and (max-width: 958px) {
     #portfolioContainer {
         width: 640px;
     }
@@ -50,4 +57,4 @@ html, body {
         width: 320px;
     }
 }
-
+ */
