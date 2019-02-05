@@ -20,4 +20,8 @@ function loadIframe(){
         iframe.style.height = iframe.contentWindow.document.body.height + 'px';
         iframe.contentDocument.body.style.overflow = "hidden";
     }
+    else if (iframe.contentWindow.location.href.slice(-12) != "contact.html") {
+        iframe.style.height = "Calc(100vh - 140px)";
+        iframe.contentDocument.body.style.overflow = "scroll";
+    }
 }
