@@ -16,7 +16,7 @@ function clickPortfolio() {
 function loadIframe(){
     var iframe = document.getElementById("iframePanel");
 
-    if (window.width < 640){
+    if (screen.width < 640){
         iframe.style.height = iframe.contentWindow.document.body.height + 'px';
         iframe.contentDocument.body.style.overflow = "hidden";
     }
