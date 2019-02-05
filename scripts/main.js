@@ -12,29 +12,12 @@ function clickPortfolio() {
     // loadinnerDiv("portfolio.html");
 }
 
-// function loadInnerDiv(contentURL) {
-//     // get a reference to the innerDiv
-//     var innerDiv = document.getElementById("innerDiv");
-
-//     innerDiv.innerHTML = '<object type="text/html" data="' + contentURL + '" ></object>';
-// }
-
-
 // var innerDiv;
 function loadIframe(){
     var iframe = document.getElementById("iframePanel");
 
-    if (window.width < 640 || iframe.contentDocument.URL.slice(-12) == "contact.html"){
+    if (window.width < 640){
         iframe.style.height = iframe.contentWindow.document.body.height + 'px';
         iframe.scrolling = "no";
     }
-    else {
-        iframe.style.height = "420px";
-        iframe.scrolling = "yes";
-    }
-
-    // if (iframe.src == "contact.html") {
-    //     iframe.scrolling = "no";
-    // }
 }
-

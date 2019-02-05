@@ -1,6 +1,7 @@
 /* portfolio elements */
-body {
+html, body {
     text-align: center;
+    overflow: scroll;
 }
 
 #portfolioContainer {

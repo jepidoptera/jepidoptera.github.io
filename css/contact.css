@@ -7,6 +7,10 @@ p {
     text-align: justify;
 }
 
+html, body {
+    overflow: hidden;
+}
+
 #bio, #contact, #portfolio {
     padding: 0px 20px;
 }
