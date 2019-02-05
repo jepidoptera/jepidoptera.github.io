@@ -21,7 +21,7 @@
         </script> -->
     </head>
     
-    <body onresize="loadIframe()">
+    <body>
         <div class="box">
             <!-- header section -->
             <section id="headerSection">
@@ -31,13 +31,13 @@
                     </div>
     
                     <section id="tabs">
-                        <button id="aboutTab" onclick="clickAbout()">
+                        <button id="aboutTab" onclick="window.location.href='index.html'">
                             About
                         </button>
-                        <button id="portfolioTab" onclick="clickPortfolio()">
+                        <button id="portfolioTab" onclick="window.location.href='portfolio.html'">
                             Portfolio
                         </button>
-                        <button id="contactTab" onclick="clickContact()">
+                        <button id="contactTab" onclick="window.location.href='contact.html'">
                             Contact
                         </button>
                     </section>
@@ -45,15 +45,40 @@
                 <hr>
             </section>
 
-
             <section id="mainContent">
                 <img src='images/white_wall.jpg' style='position:fixed;top:0px;left:0px;width:100%;height:100%;z-index:-1;'>
-                <!-- use an iframe to embed a page within the page! -->
-                <!-- this way all the menus can stay put while the content changes -->
-                <iframe src="about.html" name="iframePanel" id="iframePanel" frameborder="0" onload="loadIframe()">
-
-                </iframe>
-
+                <div id="innerDiv">
+                    <section id="bio">
+                        <h3>
+                            About Me
+                        </h3>
+                        <hr>
+                        <div id = "selfieContainer">
+                            <img src="images/me.jpg" id="selfie" alt="">
+                        </div>
+                        <p>
+                            Hi!  My name, as you can see from the top of the page, is Peter Allen.  I am currently taking the University of Minnesota coding bootcamp.  When I'm not in class, I'm working as a carpenter and general contractor in Minneapolis and the surrounding area.  
+                        </p>
+                        <p>
+                            Now I will tell you some more stuff about myself. Don't expect a full-length autobiography, but... I was born in Minneapolis, and lived the first six years of my life there, but most of my childhood memories took place on a "farm" about 50 miles south.  I put "farm" in quotes only because it wasn't a lot of land and farming wasn't anyone's full-time occupation.  However, we did have a tractor, a barn, and a varying (but generally large) number of chickens.
+                        </p>
+                        <p>
+                            Since then, I've lived in a few dozen different places on three continents, pursuing adventure, living it up, or squandering my youth, depending on who you ask.  Now that my parents are old enough to have grandkids, it's time I buckle down and get a real job, so I'm taking this class.  How am I doing so far?
+                        </p>
+                        <p>
+                            Here are some further words to fill out the page.
+                        </p>
+                        <p class = "randomtext">
+                            77
+                        </p>
+                        <p class = "randomtext">
+                            107
+                        </p>
+                        <p class = "randomtext">
+                            62
+                        </p>
+                    </section>
+                </div>
             </section>
 
             <!-- footer section -->

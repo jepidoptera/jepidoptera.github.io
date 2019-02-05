@@ -98,16 +98,17 @@ hr {
     text-align: center;
  }
 
-#iframePanel{
+#iframePanel, #innerDiv{
     width: 960px;
-    height: Calc(100vh - 140px);
+    /* height: Calc(100vh - 140px); */
     margin: 20px;
     background-color: white;
-    display: block;
+    display: flex;
+    flex-direction: column;
     margin: 20px auto;
     position: relative;
     top: 0px;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 #footer {
