@@ -24,6 +24,8 @@ html, body {
 .portfolioButton {
     position: absolute;
     top: 100px;
+    left: 0px;
+    display: block;
     width: 280px;
     height: 50px;
     background-color: cadetblue;
@@ -43,18 +45,3 @@ html, body {
     background-color: whitesmoke;
     top: 0;
 }
-
-/* alterations for smaller screens */
-/* has to be 958 or you only get two columns at full width */
-/* @media screen and (max-width: 958px) {
-    #portfolioContainer {
-        width: 640px;
-    }
-}
-
-@media screen and (max-width: 640px) {
-    #portfolioContainer {
-        width: 320px;
-    }
-}
- */
