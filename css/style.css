@@ -83,8 +83,9 @@ hr {
     border: 1px solid lightgray;
     width: 33.33%;
     text-align: center;
-    padding: 5px;
+    padding: 3px;
     margin: auto;
+    font-size: 11pt;
 }
 
 #aboutTab:hover, #contactTab:hover, #portfolioTab:hover {
@@ -159,8 +160,8 @@ hr {
     }
 
     #aboutTab, #contactTab, #portfolioTab {
-        height: 40%;
-        padding: 9px;
+        height: 37%;
+        padding: 7px;
         /* margin: 9px; */
     }
 
