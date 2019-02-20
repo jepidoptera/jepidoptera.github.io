@@ -7,6 +7,9 @@ function rpsButton(){
 function hangmanButton(){
     window.open("hangman/index.html", "_blank");
 }
+function rpgButton(){
+    window.open("RPG/index.html", "_blank");
+}
 function questionButton(){
     window.open("coming-soon.html", "_blank");
 }
