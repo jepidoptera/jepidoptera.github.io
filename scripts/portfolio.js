@@ -13,3 +13,4 @@ function rpgButton(){
 function questionButton(){
     window.open("coming-soon.html", "_blank");
 }
+
