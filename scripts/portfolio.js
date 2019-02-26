@@ -10,7 +10,9 @@ function hangmanButton(){
 function rpgButton(){
     window.open("RPG/index.html", "_blank");
 }
+function triviaButton(){
+    window.open("trivia-game/index.html", "_blank");
+}
 function questionButton(){
     window.open("coming-soon.html", "_blank");
 }
-
