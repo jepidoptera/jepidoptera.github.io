@@ -13,3 +13,6 @@
 [submodule "trivia-game"]
 	path = trivia-game
 	url = https://github.com/jepidoptera/trivia-game.git
+[submodule "giphy-api"]
+	path = giphy-api
+	url = https://github.com/jepidoptera/giphy-api.git
