@@ -16,3 +16,6 @@
 [submodule "giphy-api"]
 	path = giphy-api
 	url = https://github.com/jepidoptera/giphy-api.git
+[submodule "multiplayer-rps"]
+	path = multiplayer-rps
+	url = https://github.com/jepidoptera/multiplayer-rps.git

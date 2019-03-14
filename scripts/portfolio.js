@@ -16,3 +16,6 @@ function triviaButton(){
 function questionButton(){
     window.open("coming-soon.html", "_blank");
 }
+function gamelobbyButton() {
+    window.open("multiplayer-rps/index.html", "_blank");
+}
