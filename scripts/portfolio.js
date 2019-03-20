@@ -19,3 +19,6 @@ function questionButton(){
 function gamelobbyButton() {
     window.open("multiplayer-rps/index.html", "_blank");
 }
+function pokemonTrailButton() {
+    window.open("The-Most-Badass-Project-Evah/index.html", "_blank");
+}

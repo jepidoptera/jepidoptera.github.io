@@ -19,3 +19,6 @@
 [submodule "multiplayer-rps"]
 	path = multiplayer-rps
 	url = https://github.com/jepidoptera/multiplayer-rps.git
+[submodule "The-Most-Badass-Project-Evah"]
+	path = The-Most-Badass-Project-Evah
+	url = https://github.com/jepidoptera/The-Most-Badass-Project-Evah.git
