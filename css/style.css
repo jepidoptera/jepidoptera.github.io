@@ -6,7 +6,7 @@
 
 h1, h2, h3, h4 {
     font-family: 'Georgia', Times, Times New Roman, serif;
-    color: rgb(50, 80, 90);
+    color: black;
     font-weight: bold;
 }
 
@@ -14,7 +14,8 @@ html,
 body {
   height: 100%;
   margin: 0;
-  color: rgb(50, 80, 90);
+  color: black;
+  overflow: hidden;
 }
 
 hr { 
@@ -28,11 +29,34 @@ hr {
     width: 100%;
 }
 
-.box {
-  display: flex;
-  flex-flow: column;
-  height: 100%;
-  flex: 0 1 auto;
+p {
+    text-align: justify;
+}
+
+#selfieContainer {
+    width: 300px;
+    height: 200px;
+    margin: 0 20px 10px 0;
+    text-align: center;
+    float: left;
+    /* display: inline-block; */
+}
+
+#selfie {
+    display: inline-block;
+    width: 300px;
+    height: 200px;
+}
+
+#contentBox {
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+    flex: 0 1 auto;
+    width: 960px;
+    left: 50%;
+    transform: translate(-50%);
 }
 
 #headerSection {
@@ -56,122 +80,164 @@ hr {
 #nametag {
     font-size: 24pt;
     font-weight: 200;
-    height: 80px;
+    height: 92%;
     width: 300px;
-    background-color: rgb(50, 80, 90);
+    background-color: rgb(72,72,72);
     padding: 20px;
-    color: aliceblue;
+    color: white;
     text-align: center;
+    margin-left: 20px;
     position: relative;
-    float: left;
-    /* overflow-x: auto; */
+    top: 50%;
+    left: 0;
+    transform: translate(0, -50%);
 }
 
 #tabs {
-    /* margin: auto 0; */
-    /* float: left; */
-    /* display: block; */
-    width: 250px;
-    float: right;
-    margin-top: 25px;
-    /* margin: auto 0; */
-    /* clear: right; */
+    position: absolute;
+    width: 400px;
+    height: 50%;
+    top: 50%;
+    transform: translate(0%, -50%);
+    right: 0;
+    margin-right: 20px;
 }
 
-#aboutTab, #contactTab, #portfolioTab {
-    float: left;
+.tabButton {
+    position: relative;
+    float: right;
     box-sizing: border-box;
     border: 1px solid lightgray;
     width: 33.33%;
+    height: 100%;
     text-align: center;
     padding: 3px;
     margin: auto;
-    font-size: 11pt;
+    font-size: 16pt;
+    box-sizing: border-box;
 }
 
-#aboutTab:hover, #contactTab:hover, #portfolioTab:hover {
-    z-index: 100;
+.tabSelected {
+    background-color: rgb(72,72,72);
+    color: white;
+    /* border: 2px solid black; */
 }
 
-#mainContent{
+.tabButton:focus {
+    outline: 0;
+}
+
+.mainContent{
     /* flex to fit */
     flex: 1 1 auto;
-    width: 100%;
     text-align: center;
     position: relative;
     top: 100px;
- }
+    bottom: 40px;
+    background-color: white;
+    overflow: scroll;
+    display: block;
+    padding: 20px;
+    flex-direction: column;
+}
 
-#iframePanel, #innerDiv{
-    width: 960px;
-    /* height: Calc(100vh - 140px); */
+#portfolio, #messageForm, #contact {
+    display: none;
+}
+
+#innerDiv{
+    width: 920px;
     margin: 20px;
     background-color: white;
-    display: flex;
-    flex-direction: column;
+    display: block;
+    /* flex-direction: column; */
     margin: 20px auto;
     position: relative;
     top: 0px;
-    /* overflow: hidden; */
 }
 
 #footer {
     position: fixed;
-    top: calc(100% - 40px);
-    width: 100%;
-    height: 60px;
+    bottom: 0;
+    width: 960px;
+    height: 40px;
     background-color: dimgray;
     flex: 0 1 40px;
     text-align: center;
     font-size: 8pt;
     color: wheat;
+    left: 50%;
+    transform: translate(-50%);
 }
 
 /* alterations for smaller screens */
 @media screen and (max-width: 1080px) {
-    #iframePanel, #innerDiv, #headerContent {
-        width: 87.5%
+    #headerContent {
+        width: 100%;
+    }
+    #innerDiv {
+        width: Calc(100% - 40px);
+    }
+    #contentBox, #footer {
+        width: 87.5%;
     }
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 860px) {
+
     #nametag {
         font-size: 24pt;
         font-weight: 200;
         height: 60%;
         width: 100%;
-        background-color: rgb(50, 80, 90);
         padding: 6px;
-        color: aliceblue;
         text-align: center;
         display: inline-block;
         float: none;
-        /* overflow-x: auto; */
+        margin: 0;
+        margin-left: 0;
+        transform: none;
     }
-    
+
     #tabs {
-        /* margin: auto 0; */
-        /* float: left; */
-        /* display: block; */
         width: 100%;
         float: none;
         margin: 0;
-        /* margin: auto 0; */
-        /* clear: right; */
+        margin-right: 0;
+        height: 100%;
+        top: 0;
+        position: relative;
+        transform: none;
     }
-
-    #aboutTab, #contactTab, #portfolioTab {
+    
+    .tabButton {
         height: 37%;
-        padding: 7px;
-        /* margin: 9px; */
+        /* padding: 7px; */
+    }
+}
+
+@media screen and (max-width: 640px) {
+    #selfieContainer {
+        float: none;
+        clear: both;
+        width: 100%;
     }
 
     #headerSection {
         position: relative;
     }
 
-    #mainContent {
+    .mainContent {
         top: 20px;
+        overflow: visible;
+    }
+
+    body, html {
+        overflow: scroll;
+    }
+
+    #footer {
+        position: absolute;
     }
 }
 

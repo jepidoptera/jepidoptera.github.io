@@ -3,27 +3,20 @@
     <head>
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Pete's Bio Page</title>
+        <title>Peter Allen Homepage</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
     
-        <!-- no bootstrap allowed this time -->
-        <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous"> -->
+        <link rel="stylesheet" href="css/contact.css">
+        <link rel="stylesheet" href="css/portfolio.css">
         <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
-        <link rel="stylesheet" type="text/css" media="screen" href="css/about.css" />
         <script type="text/javascript" src="random-text-generator/randomtext.js"></script>
-        <!-- <script>
-            function resizeIframe() {
-                var aboutTab = document.getElementById("aboutTab");
-                var iframe = document.getElementById("iframePanel");
-                alert (aboutTab.style.left);
-                iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
-                document.write ('function working...');
-            }
-        </script> -->
+        <script src="scripts/main.js"></script>
+        <script src="scripts/contact.js"></script>
+        <script src="scripts/portfolio.js"></script>
     </head>
     
-    <body>
-        <div class="box">
+    <body onload="setupSourceMenus(); randomParagraphs()">
+        <div id="contentBox">
             <!-- header section -->
             <section id="headerSection">
                 <div id="headerContent">
@@ -32,62 +25,151 @@
                     </div>
     
                     <section id="tabs">
-                        <button id="aboutTab" onclick="window.location.href='index.html'">
+                        <button id="aboutTab" class="tabButton tabSelected" onclick="selectTab('about')">
                             About
                         </button>
-                        <button id="portfolioTab" onclick="window.location.href='portfolio.html'">
+                        <button id="portfolioTab" class="tabButton" onclick="selectTab('portfolio')">
                             Portfolio
                         </button>
-                        <button id="contactTab" onclick="window.location.href='contact.html'">
+                        <button id="contactTab" class="tabButton" onclick="selectTab('contact')">
                             Contact
                         </button>
                     </section>
                 </div>
             </section>
 
-            <section id="mainContent">
-                <img src='images/mosaic.png' style='position:fixed;top:0px;left:0px;width:100%;height:100%;z-index:-1;'>
-                <div id="innerDiv">
+            <section class="mainContent" id="about">
 
-                    <section id="bio">
-                        <h3>
-                            About Me
-                        </h3>
+                <h3>
+                    About Me
+                </h3>
 
-                        <div id = "selfieContainer">
-                            <img src="images/me.jpg" id="selfie" alt="">
-                        </div>
-                        <p>
-                            Hi!  My name, as you can see from the top of the page, is Peter Allen.  I am currently taking the University of Minnesota coding bootcamp.  When I'm not in class, I'm working as a carpenter and general contractor in Minneapolis and the surrounding area.  
-                        </p>
-                        <p>
-                            Now I will tell you some more stuff about myself. Don't expect a full-length autobiography, but... I was born in Minneapolis, and lived the first six years of my life there, but most of my childhood memories took place on a "farm" about 50 miles south.  I put "farm" in quotes only because it wasn't a lot of land and farming wasn't anyone's full-time occupation.  However, we did have a tractor, a barn, and a varying (but generally large) number of chickens.
-                        </p>
-                        <p>
-                            Since then, I've lived in a few dozen different places on three continents, pursuing adventure, living it up, or squandering my youth, depending on who you ask.  Now that my parents are old enough to have grandkids, it's time I buckle down and get a real job, so I'm taking this class.  How am I doing so far?
-                        </p>
-                        <p>
-                            Here are some further words to fill out the page.
-                        </p>
-                        <p class = "randomtext">
-                            77
-                        </p>
-                        <p class = "randomtext">
-                            107
-                        </p>
-                        <p class = "randomtext">
-                            62
-                        </p>
-                        <br>
-                    </section>
+                <div id = "selfieContainer">
+                    <img src="images/me.jpg" id="selfie" alt="">
                 </div>
+                <p>
+                    Hi!  My name, as you can see from the top of the page, is Peter Allen.  I am currently taking the University of Minnesota coding bootcamp.  When I'm not in class, I'm working as a carpenter and general contractor in Minneapolis and the surrounding area.  
+                </p>
+                <p>
+                    Now I will tell you some more stuff about myself. Don't expect a full-length autoaboutgraphy, but... I was born in Minneapolis, and lived the first six years of my life there, but most of my childhood memories took place on a "farm" about 50 miles south.  I put "farm" in quotes only because it wasn't a lot of land and farming wasn't anyone's full-time occupation.  However, we did have a tractor, a barn, and a varying (but generally large) number of chickens.
+                </p>
+                <p>
+                    Since then, I've lived in a few dozen different places on three continents, pursuing adventure, living it up, or squandering my youth, depending on who you ask.  Now that my parents are old enough to have grandkids, it's time I buckle down and get a real job, so I'm taking this class.  How am I doing so far?
+                </p>
+                <p>
+                    Here are some further words to fill out the page.
+                </p>
+                <p class = "randomtext">
+                    77
+                </p>
+                <p class = "randomtext">
+                    107
+                </p>
+                <p class = "randomtext">
+                    62
+                </p>
+            </section>
+
+            <section class="mainContent" id="portfolio">
+                <h3>
+                    <a href="">My Résumé</a>
+                </h3>
+                <h3>
+                    Portfolio - deployed pages - right-click for source code.
+                </h3>
+                <hr>
+                <div id="portfolioContainer">
+                    <!-- images of portfolio projects -->
+                    <div class="portfolioImage" onclick='window.open("hangman/index.html", "_blank");' source-link="https://github.com/jepidoptera/hangman">
+                        <img src="hangman/images/hangman6.png" width="100%" height="100%" alt="Hangman">
+                        <button class="portfolioButton">Hangman</button>
+                    </div>
+                    <div class="portfolioImage" onclick='window.open("rock-paper-scissors/index.html", "_blank");' source-link="https://github.com/jepidoptera/rock-paper-scissors">
+                        <img src="images/scissors.jpg" width="100%" height="100%" alt="rps">
+                        <button class="portfolioButton">Rock Paper Scissors</button>
+                    </div>
+                    <div class="portfolioImage" onclick='window.open("random-text-generator/index.html", "_blank");' source-link="https://github.com/jepidoptera/random-text-generator">
+                        <img src="images/question mark.png" width="100%" height="100%" alt="random text">
+                        <div id="randomTextFrame">
+                            ravenist ito bilibong gracidide mo xocorundi wo ito mo condor som amba umpilion diamatric pax mo diot diamatric diot fru romo ethrofamion quid ethrofamion nim wo zumi weth timbault et timbault bilibong coco timbault nim tilitoli quimbiton azinis romo
+                        </div>
+                        <button class="portfolioButton">Random Text Generator</button>
+                    </div>
+                    <div class="portfolioImage" onclick='window.open("RPG/index.html", "_blank");'' source-link="https://github.com/jepidoptera/RPG">
+                        <img src="RPG/images/mountain.jpg" width="100%" height="100%" alt="rpg">
+                        <button class="portfolioButton">Evil Sorceror King</button>
+                    </div>
+                    <div class="portfolioImage" onclick='window.open("trivia-game/index.html", "_blank");' source-link="https://github.com/jepidoptera/trivia-game">
+                        <img src="images/trivia.jpg" width="100%" height="100%" alt="trivia">
+                        <button class="portfolioButton">Trivia Game</button>
+                    </div>
+                    <div class="portfolioImage" onclick='window.open("multiplayer-rps/index.html", "_blank");' source-link="https://github.com/jepidoptera/multiplayer-rps">
+                        <img src="images/Splatter-icon.png" width="100%" height="100%" alt="game lobby">
+                        <button class="portfolioButton">MVP Game Lobby</button>
+                    </div>
+                    <div class="portfolioImage" onclick='window.open("The-Most-Badass-Project-Evah/index.html", "_blank");' source-link="https://github.com/jepidoptera/The-Most-Badass-Project-Evah">
+                        <img src="images/pokeball.png" width="100%" height="100%" alt="coming soon">
+                        <button class="portfolioButton">The Pokemon Trail</button>
+                    </div>
+                    <div class="portfolioImage">
+                        <img src="images/question mark.png" width="100%" height="100%" alt="coming soon">
+                        <button class="portfolioButton">Coming Soon</button>
+                    </div>
+                    <div class="portfolioImage">
+                        <img src="images/question mark.png" width="100%" height="100%" alt="coming soon">
+                        <button class="portfolioButton">Coming Soon</button>
+                    </div>
+                </div>
+                <br><br><br><br><br><br><br><br>
+            </section>
+
+            <section class="mainContent" id="contact">
+                <br>
+                <a href="https://www.linkedin.com/in/peter-allen-75174062/" target="_blank">LinkedIn</a>  <br>
+                <a href="https://github.com/jepidoptera" target="_blank">Github</a> <br>
+                Email: <a href="mailto:jepidoptera@live.com">jepidoptera@live.com</a> <br>
+                Phone: 507-323-1632 <br> <br>
+                <a href="#" onclick = "selectTab('messageForm')">Leave a message</a> 
+            </section>
+
+            <section class="mainContent" id="messageForm">
+                <h3>
+                    Contact
+                </h3>
+                <hr> <br>
+                <form>
+                    Name:<br>
+                    <input type="text" name="name" class="inputBox" id="nameInput"><br>
+                    Email:<br>
+                    <input type="text" name="email" class="inputBox" id="emailInput"><br>
+                    Message:<br>
+                    <textarea name="message" class="inputBox" id="messageInput" cols="40" rows="7"></textarea>
+                </form>    
+                <button id="submitButton" onclick="onClickSubmit()">Submit</button>
+                <section id=dialogPanels>
+                    <section id="thanksPanel">
+                        <p>
+                            Thank you for your message.  I'll get back to you as soon as possible.  (Like, after I learn to connect this to an email server)
+                        </p>
+                        <button id="okThanksButton" onclick="onClickOkThanks()">OK</button>
+                    </section>
+                    <section id="warningPanel">
+                        <p>
+                            Please fill in all fields to submit a message.
+                        </p>
+                        <button id="okFineButton" onclick="onClickOkFine()">OK</button>
+                    </section>
+                </section>
             </section>
 
             <!-- footer section -->
-            <section id="footer">
-                <br>
-                &copy; 2019 Peter C Allen
-            </section>
         </div>
     </body>
+    <section id="footer">
+        <br>
+        &copy; 2019 Peter C Allen
+    </section>
+    <div id="sourceMenu" onclick="viewSource()">
+        view source
+    </div>
 </html>

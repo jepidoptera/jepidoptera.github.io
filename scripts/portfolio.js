@@ -1,24 +1,26 @@
-function randomTextButton(){
-    window.open("random-text-generator/index.html", "_blank");
+// jshint esversion: 6
+var selectedProject = "";
+
+function setupSourceMenus() {
+    [...document.getElementsByClassName("portfolioImage")].forEach(element => {
+        element.addEventListener('contextmenu', (event) => {sourceMenu(event, element);});
+    });
+    document.addEventListener('click', () => {
+        document.getElementById('sourceMenu').style.display = 'none';
+    });
 }
-function rpsButton(){
-    window.open("rock-paper-scissors/index.html", "_blank");
+
+var clickedElement;
+function sourceMenu(event, element) {
+    event.preventDefault();
+    console.log('right-click on ' + element);
+    var contextMenu = document.getElementById('sourceMenu');
+    contextMenu.style.display = 'block';
+    contextMenu.style.top = event.y + 'px';
+    contextMenu.style.left = event.x + 'px';
+    clickedElement = element;
 }
-function hangmanButton(){
-    window.open("hangman/index.html", "_blank");
-}
-function rpgButton(){
-    window.open("RPG/index.html", "_blank");
-}
-function triviaButton(){
-    window.open("trivia-game/index.html", "_blank");
-}
-function questionButton(){
-    window.open("coming-soon.html", "_blank");
-}
-function gamelobbyButton() {
-    window.open("multiplayer-rps/index.html", "_blank");
-}
-function pokemonTrailButton() {
-    window.open("The-Most-Badass-Project-Evah/index.html", "_blank");
+
+function viewSource() {
+    window.open(clickedElement.getAttribute('source-link'), "_blank");
 }

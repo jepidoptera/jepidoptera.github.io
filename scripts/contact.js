@@ -1,3 +1,4 @@
+// jshint esversion: 6
 function onClickSubmit(){
     // show dialog layer - blocks user from clicking anything but the box
     document.getElementById("dialogPanels").style.display = "block";
@@ -17,7 +18,12 @@ function onClickSubmit(){
 function onClickOkThanks(){
     document.getElementById("dialogPanels").style.display = "none";
     document.getElementById("thanksPanel").style.display = "none";
-    window.location.href = "about.html";
+    // clear inputs
+    document.getElementById("nameInput").value = "";
+    document.getElementById("emailInput").value = "";
+    document.getElementById("messageInput").value = "";
+    // return to bio page
+    selectTab('contact');
 }
 
 function onClickOkFine(){

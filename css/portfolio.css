@@ -1,12 +1,12 @@
 /* portfolio elements */
-html, body {
-    text-align: center;
-    overflow: scroll;
+#portfolio {
+    height: 100%;
 }
 
 #portfolioContainer {
     display: inline-block;
     width: 100%;
+    height: 100%;
     text-align: center;
 }
 
@@ -14,11 +14,12 @@ html, body {
     background-color: whitesmoke;
     position: relative;
     margin: 15px;
-    width: 280px;
+    width: 272px;
     height: 160px;
     display: inline-block;
     text-align: left;
     border: 1px solid black;
+    cursor: pointer;
 }
 
 .portfolioButton {
@@ -28,9 +29,14 @@ html, body {
     display: block;
     width: 100%;
     height: 50px;
-    background-color: rgb(40, 70, 80);
+    background-color: rgb(72,72,72);
     color: white;
     font-size: 12pt;
+    cursor: pointer;
+}
+
+.portfolioButton:focus {
+    outline: 0;
 }
 
 #randomTextFrame {
@@ -44,4 +50,12 @@ html, body {
     position: absolute;
     background-color: whitesmoke;
     top: 0;
+}
+
+#sourceMenu {
+    display: none;
+    position: absolute;
+    background-color: lightgray;
+    border: 2px ridge darkgray;
+    cursor: pointer;
 }
