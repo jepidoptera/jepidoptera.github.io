@@ -82,7 +82,7 @@ p {
     font-weight: 200;
     height: 92%;
     width: 300px;
-    background-color: rgb(72,72,72);
+    background-color: black;
     padding: 20px;
     color: white;
     text-align: center;
@@ -118,7 +118,7 @@ p {
 }
 
 .tabSelected {
-    background-color: rgb(72,72,72);
+    background-color:black;
     color: white;
     /* border: 2px solid black; */
 }

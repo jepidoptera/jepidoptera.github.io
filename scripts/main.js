@@ -9,9 +9,9 @@ function selectTab(tabname) {
         document.getElementById(currentTab).style.display = 'block';
         tabButton = document.getElementById(currentTab+"Tab");
         if (tabButton) tabButton.classList.add('tabSelected');
+        // contact pages shouldn't show scrollbars, since there is nothing to scroll to
         if (currentTab=='messageForm' || currentTab == 'contact') 
             document.body.style.overflow = 'hidden';
         else document.body.style.overflow = '';
-        // location.reload();
     }
 }
