@@ -10,7 +10,7 @@
     text-align: center;
 }
 
-.portfolioImage {
+.portfolioCard {
     background-color: whitesmoke;
     position: relative;
     margin: 15px;
@@ -20,6 +20,12 @@
     text-align: left;
     border: 1px solid black;
     cursor: pointer;
+}
+
+.portfolioImg {
+    position: relative;
+    left: 50%;
+    transform: translate(-50%)
 }
 
 .portfolioButton {
@@ -58,4 +64,8 @@
     background-color: lightgray;
     border: 2px ridge darkgray;
     cursor: pointer;
+}
+
+#sourceMenu:hover {
+    background-color: lightblue;
 }
