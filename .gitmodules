@@ -22,3 +22,6 @@
 [submodule "The-Most-Badass-Project-Evah"]
 	path = The-Most-Badass-Project-Evah
 	url = https://github.com/jepidoptera/The-Most-Badass-Project-Evah.git
+[submodule "node-hangman"]
+	path = node-hangman
+	url = https://github.com/jepidoptera/node-hangman.git

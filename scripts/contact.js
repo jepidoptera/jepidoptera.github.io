@@ -30,3 +30,4 @@ function onClickOkFine(){
     document.getElementById("dialogPanels").style.display = "none";
     document.getElementById("warningPanel").style.display = "none";
 }
+
