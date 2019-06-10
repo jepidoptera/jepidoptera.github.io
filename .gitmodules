@@ -25,6 +25,3 @@
 [submodule "node-hangman"]
 	path = node-hangman
 	url = https://github.com/jepidoptera/node-hangman.git
-[submodule "card-memory"]
-	path = card-memory
-	url = https://github.com/jepidoptera/card-memory
