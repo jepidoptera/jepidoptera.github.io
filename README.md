@@ -1,2 +1,1 @@
-# Basic-Portfolio
-homework assignment to create a basic portfolio for myself.
+Bio page, contact info, and some of my favorite projects.
