@@ -1,9 +1,6 @@
 [submodule "rock-paper-scissors"]
 	path = rock-paper-scissors
 	url = https://github.com/jepidoptera/rock-paper-scissors.git
-[submodule "random-text-generator"]
-	path = random-text-generator
-	url = https://github.com/jepidoptera/random-text-generator.git
 [submodule "hangman"]
 	path = hangman
 	url = https://github.com/jepidoptera/hangman.git
